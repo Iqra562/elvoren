@@ -8,9 +8,9 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <header>
+    <>
       <DesktopNav links={navLinks} onMenuClick={() => setIsOpen(true)} />
       <MobileNav  links={navLinks} isOpen={isOpen} onClose={() => setIsOpen(false)} />
-    </header>
+    </>
   )
 }

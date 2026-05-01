@@ -1,0 +1,13 @@
+##############################################################################################################################################
+
+What declare module Does
+When you write:
+tsdeclare module 'swiper/css/effect-fade'
+You're telling TypeScript:
+
+"This module exists. I know you can't find types for it, just trust me and don't throw an error."
+
+It's essentially a manual type declaration for modules that don't ship their own .d.ts files.
+
+
+##############################################################################################################################################

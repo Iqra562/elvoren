@@ -1,7 +1,9 @@
+import Slider from "@/components/ui/HomeSlider";
+
 export default function Page() {
   return (
-    <main>
-      <h1>HOME Home</h1>
-    </main>
+    <section className="min-h-screen  "> 
+      <Slider />
+    </section>
   )
 }

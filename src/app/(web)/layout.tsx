@@ -5,7 +5,7 @@ export default function WebLayout({ children }: { children: React.ReactNode }) {
      <div>
       <Header />
 
-       <main className="container mx-auto p-6">{children}</main>
+       <main className="mx-auto ">{children}</main>
       <footer>{/* Footer */}</footer>
     </div>
   )
