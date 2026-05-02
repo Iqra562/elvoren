@@ -28,7 +28,7 @@ useEffect(() => {
     const currentScrollY = window.scrollY;
     setAtTop(currentScrollY === 0);
 
-    if (currentScrollY <= 100) {
+    if (currentScrollY <= 1000) {
       setShowHeader(true);
     } else if (currentScrollY > lastScrollY.current) {
       setShowHeader(false);

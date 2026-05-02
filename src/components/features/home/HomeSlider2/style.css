@@ -1,0 +1,99 @@
+.content h1 {
+  font-family: 'Bebas Neue', sans-serif;
+   letter-spacing: 2px;
+}
+
+.home-swiper {
+  height: 95vh; 
+  width: 100%;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+   /* background-color: #000; */
+  /* background: linear-gradient(180deg,rgba(31, 31, 31, 0.082) 30%, rgba(91, 91, 222, 0.088) 20%, #1f609818 90%,rgba(96, 0, 128, 0.033) 90%)   ; */
+}
+
+
+
+
+
+/* inactive dots */
+.home-swiper .swiper-pagination {
+  bottom:2rem
+}
+
+@media (max-width: 1024px) {
+    .home-swiper {
+        padding: 90px 15px 20px 15px;
+   }
+  .home-swiper .swiper-pagination {
+  bottom:2.5rem
+}
+
+}
+@media (max-width: 768px) {
+    .home-swiper {
+        padding: 90px 15px 20px 15px;
+   }
+  .home-swiper .swiper-pagination {
+  bottom:2.5rem
+}
+
+}
+    @media (max-width: 576px) {
+        .home-swiper {
+            padding: 80px 15px 10px 15px;
+    }
+    .home-swiper .swiper-pagination {
+    bottom:3rem
+    }
+    .home-swiper {
+  height: 80vh; 
+  }
+
+    }
+.home-swiper .swiper-wrapper {
+ border-radius: 20px;
+ overflow: hidden; 
+
+ }
+
+/* make images fill the slide */
+.home-swiper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* arrows */
+.home-swiper .swiper-button-next,
+.home-swiper .swiper-button-prev {
+  color: #000;
+  font-weight: 800;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+}
+
+
+.home-swiper .swiper-pagination-bullet {
+  background: #000;
+  opacity: 0.2;
+  width: 9px;
+  height: 9px;
+  margin: 0 8px !important;
+ }
+ 
+
+/* active dot */
+.home-swiper .swiper-pagination-bullet-active {
+  background: #fff;
+  opacity: 1;
+  border-radius: 10px;
+    width: 30px;
+}
+
+.home-swiper .swiper-wrapper {
+
+ width: calc(100% - 5rem) !important;
+ margin: 0 auto !important;
+ }

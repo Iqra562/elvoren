@@ -51,3 +51,21 @@ const formData = await request.formData();
         })
     }
 }
+
+export async function GET(request:NextRequest){
+    try{
+ await connectDB();
+ const products = await Product.find();
+
+ return NextResponse.json({
+    success:true,
+    products,
+    message:"Product fetched successfully!"
+ },{status:200})
+    }catch(error:any){
+       return NextResponse.json({
+        success:false,
+        message:"Server Error"
+       },{status:500})
+    }
+}
