@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
  import { HiMiniChevronLeft } from "react-icons/hi2";
 import { HiMiniChevronRight } from "react-icons/hi2";
@@ -8,7 +10,7 @@ import { HiMiniChevronDown } from "react-icons/hi2";
 import { Button, ConfigProvider, Flex, Popover } from "antd";
  import svg from "@assets/images/icon.svg";
 import Link from "next/link";
-
+import { usePathname } from "next/navigation";
 
 type ListItem = {
   name: string;
@@ -26,11 +28,12 @@ type DropdownProps = {
 
  export function Dropdown({ isCollapsed, Icon, List, label } : DropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
    const content = (
     <div className=" ">
       <ul className="space-y-2 w-28">
         {List.map((item : ListItem, index : number) => {
-          const isActive = location.pathname === (item.link || "");
+          const isActive = pathname === (item.link || "");
           return (
             <li
               key={index}
@@ -88,7 +91,7 @@ type DropdownProps = {
               {!isCollapsed && (
                 <ul className="ul-list space-y-0 pl-3 ">
                   {List.map((item : ListItem, index : number) => {
-                    const isActive = location.pathname === (item.link || "");
+                    const isActive = pathname === (item.link || "");
                     return (
                       <li key={index}>
                         <Link
