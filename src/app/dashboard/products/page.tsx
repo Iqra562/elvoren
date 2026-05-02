@@ -11,9 +11,17 @@ import { MdDelete } from "react-icons/md";
  import { notification } from "antd";
 import Link from "next/link";
 import Image from "next/image";
+import Modal from "@/components/ui/Modal";
 
 
 export default function Page() {
+      const [isModalOpen, setIsModalOpen] = useState(false);
+          const [productId, setProductId] = useState(null);
+
+ const closeModalHandler = () => {
+    setIsModalOpen(false);
+    setProductId(null);
+  };
       
       const [api, contextHolder] = notification.useNotification();
 const content = (
@@ -43,7 +51,14 @@ const content = (
   return (
      <div className="container">
       {contextHolder}
-
+        <Modal
+        isOpen={isModalOpen}
+        onClose={closeModalHandler}
+        // onDelete={productDeleteHandler}
+        // isLoading={deleteProductLoading}
+        title="Delete Product?"
+        text="Deleting this product will permanently remove it."
+      />
      
       <div className="mb-10 flex items-center ">
         <div className="space-y-5 ">

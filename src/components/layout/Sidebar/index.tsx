@@ -50,7 +50,7 @@ type MenuSections = {
     {
       icon: <BiSolidTachometer className="text-xl" color="#000" />,
         label: "Products",
-        list: [{name:"List",link:'/products'}, {name:"Create",link:'/products/create'}],
+        list: [{name:"List",link:'/dashboard/products'}, {name:"Create",link:'/dashboard/products/create'}],
       
       },
 
