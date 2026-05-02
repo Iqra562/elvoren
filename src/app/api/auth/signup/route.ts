@@ -1,7 +1,7 @@
 import { connectDB } from "@/lib/db";
 import { NextRequest, NextResponse } from "next/server";
-import User from '@/models/User'
-export async function POST(request : NextRequest) {
+import User from '@/modules/user/user.model'
+export async function POST(request: NextRequest) {
     try {
         connectDB();
         const { name, email, password } = await request.json();
@@ -10,6 +10,7 @@ export async function POST(request : NextRequest) {
                 { success: false, message: "All fields are required" },
                 { status: 400 }
             )
+        }
 
             const existingUser = await User.findOne({ email });
             if (existingUser) {
@@ -18,25 +19,24 @@ export async function POST(request : NextRequest) {
                 }, { status: 409 })
             }
 
-        }
 
-        const user = await User.create({name,email,password});
+        const user = await User.create({ name, email, password });
         const response = NextResponse.json({
-            success:true, message:"Account created successfully",
-            user:{id:user._id,name:user.name,email:user.email, role:user.role}
-        },{status:201})
-return response;
-    } catch (error )  {
-         if (error instanceof Error) {
-    return NextResponse.json(
-      { success: false, message: error.message },
-      { status: 500 }
-    );
-  }
-     return NextResponse.json({
-        success:false,message: "Server error"
-     },{
-        status:500
-     })
+            success: true, message: "Account created successfully",
+            user: { id: user._id, name: user.name, email: user.email, role: user.role }
+        }, { status: 201 })
+        return response;
+    } catch (error) {
+        if (error instanceof Error) {
+            return NextResponse.json(
+                { success: false, message: error.message },
+                { status: 500 }
+            );
+        }
+        return NextResponse.json({
+            success: false, message: "Server error"
+        }, {
+            status: 500
+        })
     }
 }
