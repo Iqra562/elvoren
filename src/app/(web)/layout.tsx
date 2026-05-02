@@ -1,3 +1,4 @@
+import Footer from "@/components/layout/Footer"
 import Header from "@/components/layout/Header"
 
 export default function WebLayout({ children }: { children: React.ReactNode }) {
@@ -6,7 +7,7 @@ export default function WebLayout({ children }: { children: React.ReactNode }) {
       <Header />
 
        <main className="mx-auto ">{children}</main>
-      <footer>{/* Footer */}</footer>
+      <Footer/>
     </div>
   )
 }
