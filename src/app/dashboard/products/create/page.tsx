@@ -11,7 +11,7 @@ export default function Page(){
             <span className="text-sm ">
               <Link href='/'>Dashboard</Link>
             </span>{" "}
-            <span className="h-[2px] w-[2px] p-[2px] bg-gray-400 rounded-full"></span>
+            <span className="h-[2px]  w-[2px] p-[2px] bg-gray-400 rounded-full"></span>
             <span className="text-sm ">
               <Link href='/dashboard/products'>Product</Link>
             </span>{" "}

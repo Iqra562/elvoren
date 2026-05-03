@@ -8,7 +8,7 @@ const api= axios.create({
 
 
 
-const get= <T = any>(url:string,queryParams: AxiosRequestConfig): Promise<AxiosResponse<T>>=>{
+const get= <T = any>(url:string,queryParams?: AxiosRequestConfig): Promise<AxiosResponse<T>>=>{
 
     const response = api.get<T>(url,queryParams);
     return response;

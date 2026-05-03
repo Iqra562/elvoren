@@ -4,6 +4,7 @@ const nextConfig: NextConfig = {
   reactCompiler: true,
 
   images: {
+      domains: ["res.cloudinary.com"],
     remotePatterns: [
       {
         protocol: "https",

@@ -2,21 +2,30 @@ import slide1 from '@/assets/homeImages/slide1.webp'
   import Image from 'next/image'
 import { FaRegHeart } from "react-icons/fa";
 
- function Card() {
+type CardProps = {
+  name: string;
+  thumbnail:string,
+  description: string;
+  price: number;
+  stock: number;
+};
+
+ function Card({name,description,thumbnail , price, stock}:CardProps) {
   return (
     <>
-      <div className="  border-gray-300 border w-3/12 rounded-2xl shadow overflow-hidden  h-full flex flex-col justify-between">
+      <div className="  border-gray-300 border  rounded-2xl shadow overflow-hidden w-full h-full flex flex-col justify-between">
         <div className="px-3 py-2">
           <div className="h-60  md:h-60 lg:h-60 overflow-hidden  rounded-xl relative">
            
-               <Image src={slide1} alt='banner image' className='h-full w-full'/>
+               <Image             src={thumbnail || "/fallback.webp"} width={100} height={100}
+ alt='banner image' className='h-full w-full'/>
           </div>
         </div>
         <div className=" flex flex-1 flex-col justify-between pt-3 space-y-2  px-5 md:p-4 py-3 ">
           <div className="">
             <div className="flex justify-between items-baseline ">
               <p className="font-bold text-xl md:text-2xl capitalize text-paragraphDark">
-                productName
+                {name}
               </p> 
 
              </div>
