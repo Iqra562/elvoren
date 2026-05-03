@@ -24,6 +24,11 @@ export interface ProductResponse {
     
 }
 
+interface ProductApiResponse {
+  success: boolean;
+  products: ProductResponse[];
+  message: string;
+}
 
 const createProduct = async(payload : ProductPayload) : Promise<ProductResponse>=>{
  const response = await  ApiService.post<ProductResponse>(`${productServiceUrl.product}`,payload);
