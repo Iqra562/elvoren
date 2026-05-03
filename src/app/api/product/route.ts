@@ -53,7 +53,8 @@ const formData = await request.formData();
         return NextResponse.json({
             success: false, message: "Server error"
         }, {
-            status: 500
+            status: 500,
+              headers: corsHeaders,
         })
     }
 }
