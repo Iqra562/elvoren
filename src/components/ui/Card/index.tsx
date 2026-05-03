@@ -38,7 +38,7 @@ type CardProps = {
            
 
             <span className={`block  font-bold text-secondary text-lg `}>
-              $90            </span >
+              ${price}           </span >
 
               <span>
 <FaRegHeart />
