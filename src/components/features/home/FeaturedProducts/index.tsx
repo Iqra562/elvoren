@@ -1,8 +1,8 @@
 "use client"
 
 import Card from "@/components/ui/Card";
-import { productService } from "@/services/product.service";
-import { useQuery } from "@tanstack/react-query";
+ import { useQuery } from "@tanstack/react-query";
+ import { productService } from "@/services/product.service";
 import { ProductResponse } from "@/services/product.service";
 export default function FeaturedProducts(){
    type ProductsApiResponse = {

@@ -3,6 +3,12 @@ import { connectDB } from "@/lib/db";
 import {Product} from "@/modules/product/product.model";
 import { NextRequest, NextResponse } from "next/server";
 
+const corsHeaders = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+  "Access-Control-Allow-Headers": "Content-Type, Authorization",
+};
+
 export async function POST(request:NextRequest){
  try{
 
@@ -61,7 +67,8 @@ export async function GET(request:NextRequest){
     success:true,
     products,
     message:"Product fetched successfully!"
- },{status:200})
+ },{status:200,        headers: corsHeaders,
+})
     }catch(error:any){
        return NextResponse.json({
         success:false,
