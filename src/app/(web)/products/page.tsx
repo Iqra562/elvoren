@@ -11,9 +11,10 @@ export default function Page(){
 };
 const { data, isLoading, isError } = useQuery<ProductsApiResponse>({
     queryKey: ["products"],
-    queryFn: productService.getProduct, 
-  });
-
+queryFn: async () => {
+    const products = await productService.getProduct();
+    return { products };
+  },  });
  console.log(data,'product')
     return(
         <div className="space-y-20 flex flex-col container mt-20">

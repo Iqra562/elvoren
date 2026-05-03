@@ -10,8 +10,10 @@ export default function FeaturedProducts(){
 };
 const { data, isLoading, isError } = useQuery<ProductsApiResponse>({
     queryKey: ["products"],
-    queryFn: productService.getProduct, 
-  });
+queryFn: async () => {
+    const products = await productService.getProduct();
+    return { products };
+  },  });
 
  console.log(data,'product')
 
