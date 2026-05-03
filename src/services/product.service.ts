@@ -36,10 +36,10 @@ const createProduct = async(payload : ProductPayload) : Promise<ProductResponse>
 }
 
 
-const getProduct = async(): Promise<ProductResponse[]>=>{
-    const response = await ApiService.get<ProductResponse[]>(`${productServiceUrl.product}`);
+const getProduct = async (): Promise<ProductResponse[]> => {
+  const response = await ApiService.get<ProductApiResponse>(`${productServiceUrl.product}`);
   return response.data.products;
-}
+};
 
 export const productService = {
     createProduct,
