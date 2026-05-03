@@ -15,7 +15,7 @@ export interface ProductPayload {
 }
 
 export interface ProductResponse {
-    id:string,
+    _id:string,
    name:string,
     thumbnail:string,
     description:string,
