@@ -18,7 +18,7 @@ type CardProps = {
           <div className="h-60  md:h-60 lg:h-60 overflow-hidden  rounded-xl relative">
            
                <Image             src={thumbnail || "/fallback.webp"} width={100} height={100}
- alt='banner image' className='h-full w-full'/>
+ alt='banner image' className='h-full w-full object-cover'/>
           </div>
         </div>
         <div className=" flex flex-1 flex-col justify-between pt-3 space-y-2  px-5 md:p-4 py-3 ">
