@@ -5,7 +5,7 @@ import { FaRegHeart } from "react-icons/fa";
 type CardProps = {
   name: string;
   thumbnail:string,
-  description: string;
+  description: string | null; 
   price: number;
   stock: number;
 };

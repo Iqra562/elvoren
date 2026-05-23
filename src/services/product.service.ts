@@ -1,34 +1,18 @@
 import { ApiService } from "@/lib/Api.service";
-
+import {
+  ProductApiResponseSchema,
+  type ProductPayload,
+  type ProductResponse
+} from '@/schemas/product.schema'
 const productServiceUrl = {
      product:"/product"
 }
 
 
 
-export interface ProductPayload {
-    name:string,
-    thumbnail:string,
-    description:string,
-    price:number,
-    stock:number
-}
 
-export interface ProductResponse {
-    _id:string,
-   name:string,
-    thumbnail:string,
-    description:string,
-    price:number,
-    stock:number
-    
-}
 
-interface ProductApiResponse {
-  success: boolean;
-  products: ProductResponse[];
-  message: string;
-}
+
 
 const createProduct = async(payload : ProductPayload) : Promise<ProductResponse>=>{
  const response = await  ApiService.post<ProductResponse>(`${productServiceUrl.product}`,payload);
@@ -37,8 +21,11 @@ const createProduct = async(payload : ProductPayload) : Promise<ProductResponse>
 
 
 const getProduct = async (): Promise<ProductResponse[]> => {
-  const response = await ApiService.get<ProductApiResponse>(`${productServiceUrl.product}`);
-  return response.data.products;
+  const response = await ApiService.get(`${productServiceUrl.product}`);
+  // console.log(response.data,'api rseponse')
+  const parsed = ProductApiResponseSchema.parse(response.data)
+  // console.log(parsed,'parsed data')
+  return parsed.products;
 };
 
 export const productService = {

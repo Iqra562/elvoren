@@ -1,4 +1,4 @@
-import { success, z } from 'zod'
+import {  z } from 'zod'
 
 
 
@@ -8,7 +8,7 @@ export const ProductResponseSchema = z.object({
     _id: z.string(),
     name: z.string(),
     thumbnail: z.string().url(),
-    description: z.string(),
+    description: z.string().nullable(), 
     price: z.number().positive(),
     stock: z.number().int().nonnegative(),
      createdAt: z.string().datetime(),
@@ -23,7 +23,7 @@ export const ProductResponseSchema = z.object({
 export const ProductPayloadSchema= z.object({
     name:z.string().min(1,"Name is required"),
      thumbnail: z.string().url("Must be a valid URL"),
-  description: z.string(),
+    description: z.string().nullable().optional(),
   price: z.number().positive("Price must be greater than 0"),
   stock: z.number().int().nonnegative("Stock cannot be negative"),
 

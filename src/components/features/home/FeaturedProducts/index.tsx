@@ -1,8 +1,10 @@
 "use client"
 import Card from "@/components/ui/Card";
 import { useQuery } from "@tanstack/react-query";
-import { productService, ProductResponse } from "@/services/product.service";
-
+import { productService } from "@/services/product.service";
+import { 
+  type ProductResponse 
+} from "@/schemas/product.schema";
 export default function FeaturedProducts() {
   const { data, isLoading, isError } = useQuery<ProductResponse[]>({
     queryKey: ["products"],
