@@ -14,7 +14,7 @@ const { data, isLoading, isError } = useQuery<ProductsApiResponse>({
 queryFn: async () => {
     const products = await productService.getProduct();
     return { products };
-  },  });
+  },  }); 
  console.log(data,'product')
     return(
         <div className="space-y-20 flex flex-col container mt-20">

@@ -63,7 +63,8 @@ export async function GET(request:NextRequest){
     try{
  await connectDB();
  const products = await Product.find();
-
+//  const products ='';
+ 
  return NextResponse.json({
     success:true,
     products,
