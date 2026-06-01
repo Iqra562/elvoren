@@ -1,8 +1,8 @@
 import { uploadOnCloudinary } from "@/lib/cloudinary";
 import { connectDB } from "@/lib/db";
-import {Product} from "@/modules/product/product.model";
+import {Product} from "@/modules/products/product.model";
 import { NextRequest, NextResponse } from "next/server";
-
+import {getProductsController} from '@/modules/products/product.controller'
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
@@ -59,22 +59,4 @@ const formData = await request.formData();
     }
 }
 
-export async function GET(request:NextRequest){
-    try{
- await connectDB();
- const products = await Product.find();
-//  const products ='';
- 
- return NextResponse.json({
-    success:true,
-    products,
-    message:"Product fetched successfully!"
- },{status:200,        headers: corsHeaders,
-})
-    }catch(error:any){
-       return NextResponse.json({
-        success:false,
-        message:"Server Error"
-       },{status:500})
-    }
-}
+export {getProductsController as  GET }
