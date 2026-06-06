@@ -8,7 +8,7 @@ export default async function ProductPage({ params }: Props) {
   const { id } = await params;
 
   return (
-   <section className="container min-h-screen pt-20">
+   <section className="container min-h-screen pt-20 px-52">
    
         <div className="flex flex-col  md:flex-row pt-10 space-y-10 md:space-y-0 ">
         <div className="w-full md:w-6/12 md:border-r-2 md:pr-2 lg:pr-20 xl:pr-32">
