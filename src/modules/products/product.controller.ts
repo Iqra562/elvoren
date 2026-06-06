@@ -9,7 +9,8 @@ export async function getProductsController(){
         const products = await getProductService();
         return NextResponse.json({
             success:true,
-             data:products
+             products:products,
+             message:'product fetched successfully!'
         })
     }catch{
         return NextResponse.json({
