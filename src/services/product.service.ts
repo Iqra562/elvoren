@@ -5,7 +5,7 @@ import {
   type ProductResponse
 } from '@/schemas/product.schema'
 const productServiceUrl = {
-     product:"/product"
+     product:"/products"
 }
 
 
