@@ -15,7 +15,7 @@ export default function Page(){
     queryKey: ["products"],
     queryFn: () => productService.getProduct(), 
   });
- console.log(data,'product')
+
     return(
         <div className="space-y-20 flex flex-col container mt-20">
             <div className="rounded-xl overflow-hidden">

@@ -36,8 +36,8 @@ export const ProductPayloadSchema= z.object({
 
 export const ProductApiResponseSchema = z.object({
     success:z.boolean(),
-    products:z.array(ProductResponseSchema),
-    message:z.string(),
+    data:z.array(ProductResponseSchema),
+    // message:z.string(),
 
 })
 
