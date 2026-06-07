@@ -9,7 +9,7 @@ export async function getProductsController(){
         const products = await getProductService();
         return NextResponse.json({
             success:true,
-             data:products
+            products
         })
     }catch{
         return NextResponse.json({
