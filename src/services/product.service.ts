@@ -5,7 +5,7 @@ import {
   type ProductResponse
 } from '@/schemas/product.schema'
 const productServiceUrl = {
-     product:"/product"
+     product:"/products"
 }
 
 
@@ -20,14 +20,14 @@ const createProduct = async(payload : ProductPayload) : Promise<ProductResponse>
 }
 
 
+
 const getProduct = async (): Promise<ProductResponse[]> => {
   const response = await ApiService.get(`${productServiceUrl.product}`);
-  // console.log(response.data,'api rseponse')
+  //   console.log(response.data,'api rseponse')
   const parsed = ProductApiResponseSchema.parse(response.data)
-  // console.log(parsed,'parsed data')
+  //   // console.log(parsed,'parsed data')
   return parsed.products;
 };
-
 export const productService = {
     createProduct,
     getProduct

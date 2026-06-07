@@ -10,7 +10,6 @@ export default function FeaturedProducts() {
     queryKey: ["products"],
     queryFn: () => productService.getProduct(), 
   });
-
   if (isLoading) return <p>Loading...</p>;
   if (isError) return <p>Something went wrong</p>;
 
